@@ -1,0 +1,3 @@
+#!/bin/sh
+dir="$(ls "$HOME/Media/Videos/Tutorials" | dmenu -i -l 20 -p "Watch Tutorial of...")"
+setsid mpv --really-quiet "$HOME/Media/Videos/Tutorials/$dir/$(ls "$HOME/Media/Videos/Tutorials/$dir" | dmenu -i -l 20)"

@@ -1,0 +1,71 @@
+# Function Keys
+super + F1
+	ducksearch
+super + F2
+	setsid caprine
+super + {F3, F4}
+	rl {on, off}
+super + F5
+	dmenuunicode
+
+# Regular
+# Terminal Commands
+super + Return
+	$TERMINAL
+super + e
+	$TERMINAL -e neomutt
+super + m
+	$TERMINAL -e ncmpcpp
+super + n
+	$TERMINAL -e newsboat
+super + shift + f
+	$TERMINAL -e $FILE
+super + q
+	kill -9 $(xdotool getwindowfocus getwindowpid)
+super + shift + g
+	setsid gimp
+super + shift + m
+	notify-send "📬 Syncing Emails ..."; mailsync && notify-send "📫Syncing Done!..."
+
+# dmenu Commands
+super + shift + s
+	maimpick
+super + shift + b
+	bookselect
+super + shift + t
+	viewtutorials
+super + d
+	dmenu_run
+super + r
+	dmenurecord
+
+
+# Random Commands
+super + BackSpace
+	prompt "Shutdown?" "shutdown -P now"
+super + shift + Backspace
+	prompt "Reboot?" "reboot"
+super + shift + r
+	kill -9 "$(cat /tmp/recordingpid)"
+super + s
+	maim ~/Media/Photos/Screenshots/$(date +%s).png
+
+# make a view last vim project key/script
+
+# Special Keys
+{XF86AudioPrev, XF86AudioNext}
+	mpc {prev, next}
+XF86AudioPlay
+	mpc toggle
+{XF86AudioLowerVolume, XF86AudioRaiseVolume, shift + XF86AudioLowerVolume, shift + XF86AudioRaiseVolume}
+	pulsemixer --change-volume {-5, +5, -10, +10} && refbar
+XF86AudioMute
+	pulsemixer --toggle-mute && refbar
+{XF86MonBrightnessDown, XF86MonBrightnessUp, shift + XF86MonBrightnessDown, shift + XF86MonBrightnessUp}
+	exec xbacklight -time 0 {-5,+5,-10,+10}
+{XF86KbdBrightnessUp, XF86KbdBrightnessDown}
+	xbacklight {+10, -10} -ctrl smc::kbd_backlight
+XF86Eject
+	prompt "Eject Disc?" eject
+
+

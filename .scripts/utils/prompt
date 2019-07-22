@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Just a little yes or no prompt
+
+[ $(printf "Yes\nNo" | dmenu -p "$1") == "Yes" ] && $2

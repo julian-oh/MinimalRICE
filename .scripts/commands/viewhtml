@@ -1,0 +1,15 @@
+#!/bin/sh
+
+notify-send "$(echo ":(\n-------------" "Please use this ONLY to view offline html")"
+
+[ ! -z $(printf "$1"  | grep "^/") ] && path="$1" ||
+	[ -z "$1" ] && path="$(pwd)" || path="$(pwd)/$1"
+
+echo "$path"
+
+if [ -d "$path" ] || [ -f "$path" ]; then
+	$HOME/.buildrepo/surf-2.0/surf "$1" & exit
+fi
+
+echo "Location doesn't exist!" && exit 1
+

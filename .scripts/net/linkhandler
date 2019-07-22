@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# For processing various links from surf, mutt, newsboat, etc.
+
+link="$1"
+# Temporary work-around to surf (not passing the link when using the implemented shortcut")
+[ $1 == "/bin/sh" ] && link="$2"
+
+case $1 in
+	*.mp4 | *.mp3 ) setsid mpv --input-ipc-server=/tmp/mpvsoc$(date +%s) -quiet "$link" >/dev/null 2>&1 & ;;
+	*youtube.com/watch* | *youtube.com/playlist* | *youtu.be*  ) ythandler "$link";;
+	*mega.nz*) megadl "$link";;
+	*) setsid surf "$link";;
+
+esac

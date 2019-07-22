@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $1 in
+	"on") redshift -P -O 4000K && xbacklight -set 1;;
+	"off") redshift -P -O 6500K && xbacklight -set 10;;
+esac

@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# An Interactive dmenu interface for youtube-dl
+
+# Constants
+popup="dmenu -i -l 20 -p "
+HELP="
+dmenu video stream/downloader
+dmenuvsd [-ds] [LINK] [SAVING_ROOT_DIR]\n
+dmenuvsd [-s]  [LINK]
+	SAVING_ROOT_DIR
+		This is where the saving folder would be (when used with -d, gets ignored with -s). The user can choose whether to save the video to a sub folder or not \n
+	-d | --download
+		Downloads the given link with youtube-dl (youtube-dl -f [input-format] [LINK]) \n
+	-s | --stream
+		Streams the given link using mpv\n
+	-h | --help
+		Prints out this message\n"
+# Functions
+
+manual () {
+	echo "Downloading format data..."
+	res="$(youtube-dl -F "$1")"
+
+	vid_format="$(printf "none\n$(echo -e "$res" | grep "video only" | sed "s/[[:blank:]]+video only,//")" | $popup "Pick Video Res." | sed "s/none//" | grep -o -E "^[0-9]+")"
+
+	audio_format="$(printf "none\n$(echo -e "$res" | grep "audio only" | sed "s/audio only//")" | $popup "Pick Audio" | sed "s/none//"| grep -o -E "^[0-9]+")"
+
+	[ ! -z $vid_format ] && vid_format="$vid_format""+"
+
+	echo "Format: $vid_format""$audio_format"
+	echo "Executing command: $command"$vid_format""$audio_format" "$1""
+
+	# If the user didn't picked "none" in both video and audio format
+	[ ! -z "$vid_format$audio_format" ] && \
+		eval $command"$vid_format""$audio_format" "$1" \
+		|| \
+		echo "Please pick either a video or an audio format" && exit 1
+}
+
+detectmode () {
+	case $1 in
+		-d | --stream ) [ -z $2 ] && dir="$HOME" || dir="$2";
+			output="$dir/$(printf "(here)\n$(ls -d $dir/*/)" | dmenu -p "Choose where to save" | \
+				sed "s/(here)//g")/'%(uploader)s - %(title)s.%(ext)s'"
+			command="youtube-dl -o "$output" -f ";;
+		-s | --stream ) command="mpv --ytdl-format=";;
+		*) echo -e "$HELP" && exit 0;;
+	esac
+}
+
+# Actual Scripts
+
+detectmode "$1" "$3"
+
+case "$(printf "Default (480p)\nManual\nInput" | dmenu -p "Setup")" in
+	"Manual") manual $2;;
+	"Input") format=$(printf "" | dmenu -i -p "Input Format")
+		[ -z $format ] && exit 1
+		eval $command"$format" "$2";;
+	"Default (480p)") eval $command"135+140" "$2"
+esac
+
+

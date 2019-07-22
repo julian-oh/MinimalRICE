@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Handles the download 
+
+echo "$1"
+
+DEFAULT_FILE_NAME="$(echo -e  "$1" | sed "s@+@ @g;s@%@\\x@g" | sed " s/.*\///" | xargs -0 printf "%b" )" 
+subdirectory="$(printf "$(ls -d $HOME/Downloads/*/ | sed "s:$HOME\/Downloads\/::")\n(none)" | dmenu -p "Save where in ~/Downloads?" | sed "s/(none)//")" || exit
+filename="$(echo "$DEFAULT_FILE_NAME" | dmenu -p "Filename")" || exit
+
+
+[ ! -d "$HOME/Downloads/$subdirectory" ] &&  mkdir "$HOME/Downloads/$subdirectory"
+[ "$filename" == "" ] && filename="$DEFAULT_FILE_NAME"
+
+case $type in
+
+esac
+
+wget -O "$HOME/Downloads/$subdirectory/$filename" "$1" --load-cookies="$2" --referer="$3" --user-agent="$4"

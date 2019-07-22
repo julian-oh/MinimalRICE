@@ -1,0 +1,4 @@
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set font "monospace normal 12"
+set page-padding 1

@@ -1,0 +1,21 @@
+--- config-2.h	2019-07-22 22:11:38.956379644 +0800
++++ config-final.h	2019-07-22 22:17:50.186400885 +0800
+@@ -12,10 +12,15 @@
+ static const char col_gray3[]       = "#bbbbbb";
+ static const char col_gray4[]       = "#eeeeee";
+ static const char col_cyan[]        = "#005577";
++/* Gruvbox light theme */
++static const char col_light_bg[]     = "#a89984"; /* window title bar etc... (and selected tags) */
++static const char col_light_fg[]     = "#1d2021"; /* font color*/
++static const char col_dark_bg[]      = "#282828"; /* used in the status bar, slave windows etc... */
++static const char col_dark_fg[]      = "#928374"; /* font color */
+ static const char *colors[][3]      = {
+-	/*               fg         bg         border   */
+-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
++	/*               fg            bg           border   */
++	[SchemeNorm] = { col_dark_fg,  col_dark_bg,  col_dark_bg },
++	[SchemeSel]  = { col_light_fg, col_light_bg, col_light_bg  },
+ };
+ 
+ /* tagging */

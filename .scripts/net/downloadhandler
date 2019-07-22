@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# For processing various links from surf, mutt, newsboat, etc.
+
+link="$1"
+[ "$1" == "/bin/sh" ] && link="$2" # A temporary workaround for on-click download implementation in surf (doesn't pass the arguments right compared to when 'Right click, Download link...' is used
+
+case $link in
+	*youtube.com/watch* | *youtube.com/playlist* | *youtu.be* | *.mp4 ) dmenuvsd "$(printf "Stream\nDownload" | dmenu -p "What to do?" | sed "s/Stream/-s/; s/Download/-d/")" "$link" "$HOME/Downloads";;
+	*mega.nz*)
+		[ ! -d "$HOME/Downloads/Mega Downloads" ] && mkdir "$HOME/Downloads/Mega Downloads"
+	       	megadl "$link" --path "$HOME/Downloads/Mega Downloads/"
+		bg;;
+	*) download "$link";;
+
+esac

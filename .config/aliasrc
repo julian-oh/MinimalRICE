@@ -1,0 +1,22 @@
+#!/bin/bash
+
+alias vim="vim"
+alias quickplay="setsid mpv --really-quiet --ytdl-format=135+140"
+alias lkg="setsid surf \"github.com/LukeSmithxyz\" & exit"
+alias play="setsid mpv --really-quiet"
+alias vifm="vifm ."
+# Convient Directory Access Aliases
+alias videos="cd ~/Media/Videos/ && ls"
+alias photos="cd ~/Media/Photos/ && ls"
+alias books="cd ~/Documents/Books/ & ls"
+alias br="cd ~/.buildrepo"
+
+# Edit Aliases
+alias better="vim ~/bettering-your-life"
+alias sk="vim ~/.config/sxhkd/sxhkdrc"
+alias arc="vim ~/.config/aliasrc"
+
+# Suckless configs
+alias stc="cd ~/.buildrepo/st && vim config.h"
+alias dwmc="cd ~/.buildrepo/dwm-LukeSmithxyz && vim config.h"
+alias surfc="cd ~/.buildrepo/surf-2.0 && vim config.h"

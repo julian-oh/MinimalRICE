@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Just a little program so I read off something in my library
+
+book="$HOME/Documents/PDFs/$(ls $HOME/Documents/PDFs/ | shuf | dmenu -i -l 20 -p "Read which book?")"
+[ -f "$book" ] && setsid zathura "$book"

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Random background
+
+bg="$HOME/.wallpapers/$(ls $HOME/.wallpapers/ | shuf -n 1)"
+
+while [ -d "$bg" ]
+do
+	bg="$bg/$(ls "$bg" | shuf - -n 1)"
+done
+
+setbg "$bg"

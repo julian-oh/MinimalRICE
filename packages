@@ -1,0 +1,58 @@
+
+# Suckless
+
+dwm
+st
+surf
+dmenu
+tabbed
+dunst
+
+# Media
+ncmpcpp
+mpd
+mpc
+mpv
+ffmpeg
+youtube-dl
+maim
+sxiv
+gimp
+
+# Communication and Internet
+neomutt
+gnupg
+msmtp
+muttwizard
+
+# Documents
+vim
+neovim
+sc-im
+zathura
+zathura-pdf-mupdf
+
+# Xorg
+xorg-minimal
+xorg-fonts
+xwininfo
+xinit
+xclip
+xcape
+xdotool
+xdpyinfo
+xcompmgr
+xsetroot
+xset
+sxhkd
+xwallpaper
+
+# Aesthetic
+noto-fonts-emoji
+font-symbola
+
+# Technical
+simple-mtpfs
+w3m
+ts
+redshift

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# daemons
+sxhkd &
+mpd &
+dunst &
+dwmstatus &
+
+# X Stuff
+unclutter &
+xcompmgr &
+xbacklight -set 1 -ctrl acpi_video0 &
+xbacklight -set 2 &
+
+# Postscript
+rndmbg &
+$TERMINAL -e vim "$HOME/improvement.md" &
+notify-send "Welcome to Arch Linux" "$( echo "============\nPlease get things done...\nManual coming soon!" )" &

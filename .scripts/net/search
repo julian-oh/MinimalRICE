@@ -1,0 +1,3 @@
+#!/bin/sh
+
+.buildrepo/surf-2.0/surf "duckduckgo.com/$1"

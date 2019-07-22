@@ -1,0 +1,152 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v1
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/juliano/Documents
+	Notes
+2
+d/home/juliano/Documents/Notes
+	..
+0
+d/home/juliano/Documents
+	Notes
+2
+d/home/juliano
+	Documents
+2
+d/home
+	juliano
+1
+d/home/juliano
+	Documents
+2
+d/home/juliano/Documents
+	Notes
+2
+d/home/juliano
+	Documents
+2
+d/home
+	juliano
+1
+d/home/juliano
+	Downloads
+3
+d/home/juliano/Downloads
+	..
+0
+d/home/juliano
+	Downloads
+3
+d/home/juliano/.buildrepo/surf-2.0
+	surf.1
+12
+d/home/juliano
+	Downloads
+3
+d/home/juliano/.buildrepo/surf-2.0
+	surf.1
+12
+
+# Right window history (oldest to newest):
+D/home/juliano/Media/Videos/Luke Smith
+	Rants
+4
+D/home/juliano/Media/Videos/Luke Smith/Rants
+	Luke Smith - The Paradox of Documentation - Better Manuals, More Problems!.mp4
+15
+D/home/juliano
+	Media
+3
+D/home/juliano/Creations
+	..
+0
+D/home/juliano
+	Creations
+1
+D/home
+	juliano
+1
+D/
+	home
+4
+D/home
+	juliano
+1
+D/home/juliano
+	.windows
+18
+D/home/juliano/.windows
+	Download
+5
+D/home/juliano
+	..
+0
+D/home
+	juliano
+1
+D/home/juliano
+	Media
+3
+D/home/juliano/.buildrepo/surf-2.0
+	
+0
+D/home/juliano/.buildrepo
+	
+0
+
+# Command line history (oldest to newest):
+:!vim key-handler
+:!sxiv -r
+:!sxiv -r .
+:mkdir "Dock"
+:!mpv --really-quiet --shuffle . & bg
+:move
+:rename ""
+:wq
+:!simple-mtpfs --device 1 .windows/
+:copy "Pfp.png"
+:copy
+:q
+:!mv George-Bridgman-Constructive-Anatomy.pdf ~/Downloads/
+:!mv George-Bridgman-Constructive-Anatomy.pdf ~/Documents/PDFs/
+:cd .buildrepo/surf-2.0/
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/juliano/.local/share/vifm/Trash/000_How to Draw Hyper Realistic Eyes _ Step by Step-zqNZ9df0tho.mp4
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/juliano/.local/share/vifm/Trash/000_Always Be Mindful of What You Are Doing!
+	/home/juliano/Media/Always Be Mindful of What You Are Doing!
+t/home/juliano/.local/share/vifm/Trash/000_images (10).jpeg
+	/home/juliano/Media/Photos/References/JoJo/images (10).jpeg
+t/home/juliano/.local/share/vifm/Trash/000_images(2).jpg
+	/home/juliano/Media/Photos/References/JoJo/images(2).jpg
+t/home/juliano/.local/share/vifm/Trash/000_Luke Smith - How to Install, Use and Extend LaTeX.f135.mp4
+	/home/juliano/Media/Videos/Tutorials/LateX/Luke Smith - How to Install, Use and Extend LaTeX.f135.mp4
+t/home/juliano/.local/share/vifm/Trash/000_texput.log
+	/home/juliano/Creations/texput.log
+t/home/juliano/.local/share/vifm/Trash/000_bw
+	/home/juliano/bw
+t/home/juliano/.local/share/vifm/Trash/000_How to Draw Hyper Realistic Eyes _ Step by Step-zqNZ9df0tho.mp4
+	/home/juliano/How to Draw Hyper Realistic Eyes _ Step by Step-zqNZ9df0tho.mp4

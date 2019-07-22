@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo "https://www.youtube.com/results?search_query=$(printf "$1" | sed "s/ /+/")"

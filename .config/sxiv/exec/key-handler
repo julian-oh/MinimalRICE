@@ -1,0 +1,9 @@
+#!/bin/sh
+
+
+case "$1" in
+	"C-D") while read file; do rm "$file"; done;;
+	"C-C") while read file; do cp "$file" "$HOME/Media/Photos/Dock/"; done;;
+esac
+
+notify-send "$1"

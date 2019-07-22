@@ -1,0 +1,27 @@
+#!/bin/sh
+
+trap 'update' 5
+
+delim="|"
+
+status() { \
+	# echo -e "\nSUPR + {B, T}"
+	# echo "$delim"
+	echo ""
+	echo "$(cat $HOME/.mininote | sed "s/^$//")"
+	echo "$delim"
+	echo "$(cat /sys/class/power_supply/BAT0/capacity)% $(cat /sys/class/power_supply/BAT0/status | sed "s/Discharging/🔋/;s/Charging/🔌/")"
+	echo "$delim"
+	amixer get Master | grep -o "[0-9]*%\|\[on\]\|\[off\]" | sort | uniq -d | sed "s/\[on\]/🔊/;s/\[off\]/🔈/"
+	echo "$delim"
+	date +"%a, %B %d %Y %I:%M %p"
+}
+
+update () { \
+	xsetroot -name "$(status | tr '\n' ' ')" & wait
+}
+
+while :; do
+	update
+	sleep 1m & wait
+done

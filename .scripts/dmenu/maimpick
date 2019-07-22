@@ -1,0 +1,9 @@
+#!/bin/sh
+case "$(printf "a selected area\\ncurrent window\\nfull screen\\na selected area (copy)\\ncurrent window (copy)\\nfull screen (copy)" | dmenu -l 6 -i -p "Screenshot which area?")" in
+	"a selected area") maim -s ~/Media/Photos/Screenshots/Screenshot-"$(date '+%y%m%d-%H%M-%S'_cropped).png" ;;
+	"current window") maim -i "$(xdotool getactivewindow)" ~/Media/Photos/Screenshots/Screeshot-"$(date '+%y%m%d-%H%M-%S')_window.png" ;;
+	"full screen") maim ~/Media/Photos/Screenshots/Screenshot-"$(date '+%y%m%d-%H%M-%S')_full.png" ;;
+	"a selected area (copy)") maim -s | xclip -selection clipboard -t image/png ;;
+	"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png ;;
+	"full screen (copy)") maim | xclip -selection clipboard -t image/png ;;
+esac
